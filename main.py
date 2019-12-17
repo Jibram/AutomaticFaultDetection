@@ -150,3 +150,8 @@ Fjsd = distance.jensenshannon(histLMF/len(LMF), histSMF/len(SMF))
 # If the distance is any greater than 0.1, the long term model is incorrect
 # Assumption: The Short Term Model should be the accurate one as it has the "real data".
 print("Total distance between two models:", (Tjsd + Fjsd)/2)
+jsd = (Tjsd + Fjsd) / 2
+if jsd < 0.15:
+    print("Doesn't appear to be a problem.")
+else:
+    print("Very likely a problem in the sensor")
